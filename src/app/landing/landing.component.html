@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="container  mt-2">
+  <div class="row">
+    <div class="col-lg-6">
+      <span class="" style="font-size: 22px;">Projects</span>
+      <span class="small font-italic"> - Click on project to view dashboard, test executed result etc..</span>
+    </div>
+    <div class="col-lg">
+      <div class="text-right">
+       <!-- <button class="btn btn-primary btn-sm">Add New Project</button>-->
+        <div class="d-inline-flex flex-fill">Search :</div>
+        <div class="d-inline-flex  flex-fill">
+          <input type="text" class="form-control form-control-sm">
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="m-1">
+  <div class="row mt-2">
+    <div class="col-lg-3 mb-3" *ngFor="let a of [1,2,3,4,5,6,7,8];  index as i" (click)="goToDashBoard()">
+      <div class="card  table-row-custom" style="cursor: pointer;">
+        <div class="card-body">
+          <h6 class="card-title">SPIM - {{i}}</h6>
+          <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+        </div>
+        <div class="card-footer p-0">
+          <div class="d-inline-flex w-100">
+            <div class="flex-row flex-fill p-1 small">Created : 02-Dec-21 : 10:10</div>
+            <div class="flex-row flex-fill text-right">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-light p-1"
+                        style="background-color: unset !important;border: unset !important;">
+                  <i class="bi bi-pencil"></i>
+                </button>
+                <button type="button" class="btn btn-light p-1"
+                        style="background-color: unset !important;border: unset !important;color:salmon">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

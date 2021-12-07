@@ -1,0 +1,271 @@
+<div class="container-fluid mt-lg-3" *ngIf="!isCreate">
+  <form>
+    <div class="form-row">
+
+      <div class="form-group mb-1 col-lg-2">
+        <label for="Author" class="col-form-label col-form-label-sm">Author</label>
+        <input type="text" class="form-control form-control-sm" id="Author" placeholder="Author">
+      </div>
+      <div class="form-group mb-1 col-lg-1">
+        <label for="Status" class="col-form-label col-form-label-sm">Status</label>
+        <select id="Status" class="form-control form-control-sm" placeholder="Status">
+          <option selected>Pass</option>
+          <option>Hold</option>
+        </select>
+      </div>
+
+      <div class="form-group mb-1 col-lg-1">
+        <label for="Priority" class="col-form-label col-form-label-sm">Priority</label>
+        <select id="Priority" class="form-control form-control-sm" placeholder="Priority">
+          <option selected>P1</option>
+          <option>P2</option>
+          <option>P3</option>
+        </select>
+      </div>
+      <div class="form-group mb-1 col-lg-1">
+        <label for="Automatable" class="col-form-label col-form-label-sm">Automatable</label>
+        <select id="Automatable" class="form-control form-control-sm" placeholder="Automatable">
+          <option selected>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+      <div class="form-group mb-1 col-lg-3">
+        <label for="TestcaseName" class="col-form-label col-form-label-sm">Testcase Name</label>
+        <input type="text" class="form-control form-control-sm" id="TestcaseName" placeholder="Testcase Name">
+      </div>
+
+      <div class="form-group mb-1 col-lg-3">
+        <label for="TestcaseDescription" class="col-form-label col-form-label-sm">Testcase Description</label>
+        <input type="text" class="form-control form-control-sm" id="TestcaseDescription"
+               placeholder="Testcase Description">
+      </div>
+
+      <div class="form-group mb-1 col-lg-1 align-self-end">
+        <label for="TestcaseDescription" class="col-form-label col-form-label-sm"></label><br/>
+        <button type="submit" class="btn btn-primary btn-sm align-self-baseline" (click)="createCase()">Create</button>
+      </div>
+
+    </div>
+
+  </form>
+</div>
+
+<div class="container-fluid mt-lg-3" *ngIf="isCreate">
+  <div class="row mb-2"
+       style="background-color: #C2DBFF5A; border-top: 1px solid #3dcd58;border-bottom: 1px solid #3dcd58">
+    <div class="col-lg-auto col-form-label-sm">
+      <span class="bold-labels font-weight-bold">Author : </span><span>Sandeep</span>
+    </div>
+    <div class="col-lg-auto col-form-label-sm">
+      <span class="bold-labels font-weight-bold">Status : </span>
+      <span>Pass</span>
+    </div>
+    <div class="col-lg-auto col-form-label-sm">
+      <span class="bold-labels font-weight-bold">Priority : </span>
+      <span>P1</span>
+    </div>
+    <div class="col-lg-auto col-form-label-sm">
+      <span class="bold-labels font-weight-bold">Automatable : </span>
+      <span>true</span>
+    </div>
+    <div class="col-lg-auto col-form-label-sm">
+      <span class="bold-labels font-weight-bold">Test Case Id : </span>
+      <span>#1000</span>
+    </div>
+    <div class="col-lg-auto col-form-label-sm">
+      <span class="bold-labels font-weight-bold">Test Case Name : </span>
+      <span>TCase Name</span>
+    </div>
+    <div class="col-lg-auto col-form-label-sm">
+      <span class="bold-labels font-weight-bold">Test Case Description : </span>
+      <span>some desc</span>
+    </div>
+  </div>
+
+  <div class="row mt-lg-2">
+    <div class="col-lg-8 p-2">
+      <div class="card h-100">
+        <!--<div class="card-header p-2">
+          <strong>TEST STEP DETAILS (Test case #1000)</strong>
+        </div>-->
+        <div class="card-body p-lg-2">
+
+          <h6 class="card-title" style="border-bottom:  3px solid #3DCD58;">
+            <strong>Test step details (Test case #1000)</strong>
+          </h6>
+
+          <form>
+            <div class="form-row mb-1">
+              <label for="inputAddress" class="col-form-label col-form-label-sm">Step Description</label>
+              <div class="col-lg">
+                <input type="text" class="form-control form-control-sm" id="inputAddress"
+                       placeholder="Step Description">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group  mb-1 col-lg-1">
+                <label for="Protocol" class="col-form-label col-form-label-sm">Protocol</label>
+                <select id="Protocol" class="form-control form-control-sm">
+                  <option selected>http</option>
+                  <option selected>https</option>
+                </select>
+              </div>
+
+              <div class="form-group mb-1 col-lg-1">
+                <label for="Method" class="col-form-label col-form-label-sm">Method</label>
+                <select id="Method" class="form-control form-control-sm">
+                  <option selected>get</option>
+                  <option selected>post</option>
+                </select>
+              </div>
+
+              <div class="form-group mb-1 col-lg-4">
+                <label for="Host" class="col-form-label col-form-label-sm">Host/domain</label>
+                <input type="text" class="form-control form-control-sm" id="Host" placeholder="Host/domain">
+              </div>
+              <div class="form-group mb-1 col-lg-3">
+                <label for="baseUri" class="col-form-label col-form-label-sm">baseUri</label>
+                <input type="text" class="form-control form-control-sm" id="baseUri" placeholder="baseUri">
+              </div>
+              <div class="form-group mb-1 col-lg-3">
+                <label for="endpoint" class="col-form-label col-form-label-sm">endpoint</label>
+                <input type="text" class="form-control form-control-sm" id="endpoint" placeholder="endpoint">
+              </div>
+            </div>
+
+
+            <div class="form-row">
+
+              <div class="form-group mb-1 col-lg-9">
+                <label for="inputState" class="col-form-label col-form-label-sm">Payload Type</label>
+                <div class="form-check form-check-inline pl-3">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                         value="option1" selected="true">
+                  <label class="form-check-label" for="inlineRadio1">File</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                         value="option2">
+                  <label class="form-check-label" for="inlineRadio2">Json</label>
+                </div>
+                <!--<div class="mb-3">
+                  <label for="formFileSm" class="form-label">Select request body file</label>
+                  <input class="form-control form-control-sm" id="formFileSm" type="file">
+                </div>-->
+                <textarea rows="2" class="form-control" placeholder="Request body"></textarea>
+              </div>
+
+              <div class="form-group mb-1 col-lg">
+                <label for="endpoint" class="col-form-label col-form-label-sm">Request Headers</label>
+                <textarea rows="2" class="form-control" placeholder="Headers"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-sm col-2">Save & Execute</button>
+            <button type="submit" class="btn btn-outline-info btn-sm col-1 ml-lg-1">Add step</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 p-2">
+      <div class="card h-100">
+        <!--<div class="card-header p-2">
+          <strong>TEST STEP VALIDATION/ASSERTS</strong>
+        </div>-->
+        <div class="card-body p-lg-2">
+          <h6 class="card-title" style="border-bottom:  3px solid #3DCD58;">
+            <strong>Test step validation/asserts</strong>
+          </h6>
+          <form>
+            <div class="form-row mb-1">
+              <label for="inputAddress" class="col-form-label col-form-label-sm col-lg-4">Response status code</label>
+              <div class="col-lg">
+                <select id="inputState" class="form-control form-control-sm">
+                  <option selected>200_Ok</option>
+                  <option>201_OK</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row mb-1">
+              <label for="Schemafile" class="col-form-label col-form-label-sm col-lg-4">Schema file</label>
+              <div class="col-lg">
+                <input type="file" class="form-control-sm" id="Schemafile" placeholder="Schema file">
+              </div>
+            </div>
+            <div class="form-row mb-1">
+              <label for="Responsebodyfile" class="col-form-label col-form-label-sm col-lg-4">Response body file</label>
+              <div class="col-lg">
+                <input type="file" class="form-control-sm" id="Responsebodyfile" placeholder="Response body file">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="jsonexpression" class="col-form-label col-form-label-sm">Json expression</label>
+                <textarea rows="3" class="form-control form-control-sm" id="jsonexpression"
+                          placeholder="Json expression"></textarea>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="variable" class="col-form-label col-form-label-sm">Variable</label>
+                <textarea rows="3" class="form-control form-control-sm" id="variable" placeholder="Variable"></textarea>
+              </div>
+              <div class="form-group col-md-3">
+                <label for="responsebody" class="col-form-label col-form-label-sm">Response body</label>
+                <textarea rows="3" class="form-control form-control-sm" id="responsebody"
+                          placeholder="Response body"></textarea>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-lg-2">
+    <div class="col-lg-8 p-2">
+      <div class="card h-100">
+        <div class="card-body p-lg-2">
+
+          <h6 class="card-title" style="border-bottom:  3px solid #3DCD58;">
+            Test Execution Response Details
+          </h6>
+
+          <div class="row">
+            <div class="col-lg-auto col-form-label-sm">Test status: <span class="badge badge-info badge-padding-custom">PASS</span>
+            </div>
+            <div class="col-lg-auto col-form-label-sm">Step status: <span class="badge badge-info badge-padding-custom">PASS</span>
+            </div>
+            <div class="col-lg-auto col-form-label-sm">Response time: <span
+              class="badge badge-info badge-padding-custom">111ms</span></div>
+            <div class="col-lg-auto col-form-label-sm">Response code: <span
+              class="badge badge-info badge-padding-custom">200</span></div>
+            <div class="col-lg-auto col-form-label-sm">Act Response code: <span
+              class="badge badge-info badge-padding-custom">111ms</span></div>
+          </div>
+
+          <div class="row">
+            <div class="form-group  mb-1 col-lg-9">
+              <label for="endpoint" class="col-form-label col-form-label-sm">Response Body</label>
+              <textarea rows="2" class="form-control" placeholder="Response Body"></textarea>
+            </div>
+
+            <div class="form-group  mb-1 col-lg-3">
+              <label for="endpoint" class="col-form-label col-form-label-sm">Response Header</label>
+              <textarea rows="2" class="form-control" placeholder="Response Header"></textarea>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 p-2">
+      <div class="card h-100">
+        <div class="card-body p-lg-2">
+          <h5 class="card-title">Payload Diffs</h5>
+          <p class="card-text">Payload Diffs view.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

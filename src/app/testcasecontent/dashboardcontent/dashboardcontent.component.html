@@ -1,0 +1,100 @@
+<div class="container-fluid mt-3">
+  <div class="row justify-content-center">
+
+    <div class="col-lg-1 col-sm-2">
+      <div class="card"
+           style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+        <div class="card-body text-center p-0">
+          <i class="bi bi-list-ol" style="font-size: 2rem; color: coral"></i>
+          <div class="card-title mb-0 font-weight-bold">15</div>
+          <p class="card-text text-muted small font-weight-bold"><span># Tests</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-1 col-sm-2">
+      <div class="card"
+           style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+        <div class="card-body text-center p-0">
+          <i class="bi bi-percent" style="font-size: 2rem; color: coral"></i>
+          <div class="card-title mb-0 font-weight-bold">15</div>
+          <p class="card-text text-muted small font-weight-bold"><span>Test pass <i class="bi bi-percent"></i></span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-1 col-sm-2">
+      <div class="card"
+           style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+        <div class="card-body text-center p-0">
+          <i class="bi bi-check2-all" style="font-size: 2rem; color: darkseagreen"></i>
+          <div class="card-title mb-0 font-weight-bold">10</div>
+          <p class="card-text text-muted small font-weight-bold"><span>Tests pass</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-1 col-sm-2">
+      <div class="card"
+           style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+        <div class="card-body text-center p-0">
+          <i class="bi bi-alarm" style="font-size: 2rem; color: red"></i>
+          <div class="card-title mb-0 font-weight-bold">5</div>
+          <p class="card-text text-muted small font-weight-bold"><span>Tests fail</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-auto col-sm-2">
+      <div class="card"
+           style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+        <div class="card-body text-center p-0">
+          <i class="bi bi-tags-fill" style="font-size: 2rem; color: coral"></i>
+          <div class="card-title mb-0 font-weight-bold">15</div>
+          <p class="card-text text-muted small  font-weight-bold pl-2 pr-2"><span>Tests not executed</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-1 col-sm-2">
+      <div class="card"
+           style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+        <div class="card-body text-center p-0">
+          <i class="bi bi-card-checklist" style="font-size: 2rem; color: coral"></i>
+          <div class="card-title mb-0 font-weight-bold">15</div>
+          <p class="card-text text-muted small font-weight-bold"><span>Zypher count</span></p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-lg-1 col-sm-2">
+      <div class="card"
+           style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+        <div class="card-body text-center p-0">
+          <i class="bi bi-diagram-3-fill" style="font-size: 2rem; color: coral"></i>
+          <div class="card-title mb-0 font-weight-bold">8</div>
+          <p class="card-text text-muted small font-weight-bold"><span>Jira count</span></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container-fluid m-2 p-2">
+  <div class="row border m-2  p-2 font-weight-bold" style="background-color: #C2DBFF;box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;">
+    <div class="col-lg-1">#</div>
+    <div class="col-lg-3">Description </div>
+    <div class="col-lg-1">Name</div>
+    <div class="col-lg-1">Status</div>
+    <div class="col-lg-3"></div>
+  </div>
+  <div class="row m-2 p-2 test-records" *ngFor="let a of [1,2,3,4,5,6,7,8];  index as i" style="background-color: #FFFFFF; box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;">
+    <div class="col-lg-1">{{i}}</div>
+    <div class="col-lg-3">dshkfsdhfksdhf ksdhf </div>
+    <div class="col-lg-1">some name</div>
+    <div class="col-lg-1">fail</div>
+    <div class="col-lg-auto border-left"><i class="bi bi-eye" style="color: #b22222"></i></div>
+    <div class="col-lg-auto border-left border-right"><i class="bi bi-pencil" style="color: #00008b"></i></div>
+  </div>
+</div>
