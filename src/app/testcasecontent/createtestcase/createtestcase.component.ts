@@ -7,6 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CreatetestcaseComponent implements OnInit {
   isCreate: boolean;
+  viewStepList: boolean;
 
   constructor() {
   }
@@ -16,5 +17,14 @@ export class CreatetestcaseComponent implements OnInit {
 
   createCase() {
     this.isCreate = true;
+  }
+
+  viewSteps(viewValue: string) {
+    if (viewValue === 'steps') {
+      this.viewStepList = true;
+    } else {
+      this.viewStepList = false;
+    }
+
   }
 }

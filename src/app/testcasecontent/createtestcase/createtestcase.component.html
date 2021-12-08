@@ -1,4 +1,4 @@
-<div class="container-fluid mt-lg-3" *ngIf="!isCreate">
+<div class="container-fluid mt-lg-3" *ngIf="!isCreate" xmlns="http://www.w3.org/1999/html">
   <form>
     <div class="form-row">
 
@@ -29,7 +29,7 @@
           <option>No</option>
         </select>
       </div>
-      <div class="form-group mb-1 col-lg-3">
+      <div class="form-group mb-1 col-lg-2">
         <label for="TestcaseName" class="col-form-label col-form-label-sm">Testcase Name</label>
         <input type="text" class="form-control form-control-sm" id="TestcaseName" placeholder="Testcase Name">
       </div>
@@ -40,9 +40,9 @@
                placeholder="Testcase Description">
       </div>
 
-      <div class="form-group mb-1 col-lg-1 align-self-end">
+      <div class="form-group mb-1 col-lg-auto align-self-end">
         <label for="TestcaseDescription" class="col-form-label col-form-label-sm"></label><br/>
-        <button type="submit" class="btn btn-primary btn-sm align-self-baseline" (click)="createCase()">Create</button>
+        <button type="submit" class="btn btn-primary btn-sm align-self-baseline pl-5 pr-5" (click)="createCase()">Create</button>
       </div>
 
     </div>
@@ -51,8 +51,8 @@
 </div>
 
 <div class="container-fluid mt-lg-3" *ngIf="isCreate">
-  <div class="row mb-2"
-       style="background-color: #C2DBFF5A; border-top: 1px solid #3dcd58;border-bottom: 1px solid #3dcd58">
+  <div class="row mb-2 border-top border-bottom"
+       style="background-color: #f0f8ff;">
     <div class="col-lg-auto col-form-label-sm">
       <span class="bold-labels font-weight-bold">Author : </span><span>Sandeep</span>
     </div>
@@ -84,16 +84,19 @@
 
   <div class="row mt-lg-2">
     <div class="col-lg-8 p-2">
-      <div class="card h-100">
-        <!--<div class="card-header p-2">
-          <strong>TEST STEP DETAILS (Test case #1000)</strong>
-        </div>-->
-        <div class="card-body p-lg-2">
+      <div class="card h-100" [hidden]="viewStepList">
+        <div class="card-header p-1 ml-1 mr-1" style="border-bottom:  3px solid #3DCD58; background-color: transparent">
+          <div class="row align-items-end">
+            <div class="col-lg-6"><strong>Test step details (Test case #1000)</strong></div>
+            <div class="col-lg-6 text-right">
+              <button type="button" class="btn btn-warning btn-sm" (click)="viewSteps('steps')">
+                <i class="bi bi-list"></i> view steps
+              </button>
+            </div>
+          </div>
 
-          <h6 class="card-title" style="border-bottom:  3px solid #3DCD58;">
-            <strong>Test step details (Test case #1000)</strong>
-          </h6>
-
+        </div>
+        <div class="card-body p-2">
           <form>
             <div class="form-row mb-1">
               <label for="inputAddress" class="col-form-label col-form-label-sm">Step Description</label>
@@ -161,19 +164,44 @@
                 <textarea rows="2" class="form-control" placeholder="Headers"></textarea>
               </div>
             </div>
-            <button type="submit" class="btn btn-success btn-sm col-2">Save & Execute</button>
-            <button type="submit" class="btn btn-outline-info btn-sm col-1 ml-lg-1">Add step</button>
+            <button type="submit" class="btn btn-success btn-sm col-lg-2 col-4">Save & Execute</button>
+            <button type="submit" class="btn btn-outline-info btn-sm col-lg-1 col-2 ml-1">Add step</button>
           </form>
         </div>
       </div>
+
+      <div class="card h-100" [hidden]="!viewStepList">
+        <div class="card-body p-0 flex-grow-0" style="background-color: #f0f8ff">
+          <div class="float-left pl-2 pt-2">
+            <h6><strong>
+              <i class="bi bi-list"></i> All steps in this testcase
+            </strong></h6>
+          </div>
+          <div class="float-right pr-2 pt-2">
+            <span (click)="viewSteps('step')" style="font-weight: bold; font-size: 20px; cursor: pointer">
+              <i class="bi bi-x-lg"></i>
+            </span>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush" style="line-height: 1; font-size: .875rem; cursor: pointer">
+          <li class="list-group-item p-2">An item</li>
+          <li class="list-group-item p-2">A second item</li>
+          <li class="list-group-item p-2">A third item</li>
+          <li class="list-group-item p-2">A third item</li>
+          <li class="list-group-item p-2">A third item</li>
+          <li class="list-group-item p-2">A third item</li>
+          <li class="list-group-item p-2">A third item</li>
+          <li class="list-group-item p-2">A third item</li>
+        </ul>
+      </div>
+
+
     </div>
     <div class="col-lg-4 p-2">
       <div class="card h-100">
-        <!--<div class="card-header p-2">
-          <strong>TEST STEP VALIDATION/ASSERTS</strong>
-        </div>-->
-        <div class="card-body p-lg-2">
-          <h6 class="card-title" style="border-bottom:  3px solid #3DCD58;">
+
+        <div class="card-body p-2">
+          <h6 class="card-title p-1" style="border-bottom:  3px solid #3DCD58;">
             <strong>Test step validation/asserts</strong>
           </h6>
           <form>
@@ -225,9 +253,9 @@
   <div class="row mt-lg-2">
     <div class="col-lg-8 p-2">
       <div class="card h-100">
-        <div class="card-body p-lg-2">
+        <div class="card-body p-2">
 
-          <h6 class="card-title" style="border-bottom:  3px solid #3DCD58;">
+          <h6 class="card-title p-1" style="border-bottom:  3px solid #3DCD58;">
             <strong>Test Execution Response Details</strong>
           </h6>
 
@@ -261,8 +289,8 @@
     </div>
     <div class="col-lg-4 p-2">
       <div class="card h-100">
-        <div class="card-body p-lg-2">
-          <h6 class="card-title" style="border-bottom:  3px solid #3DCD58;">
+        <div class="card-body p-2">
+          <h6 class="card-title p-1" style="border-bottom:  3px solid #3DCD58;">
             <strong>Payload Diffs</strong>
           </h6>
           <p class="card-text">Payload Diffs view.</p>
