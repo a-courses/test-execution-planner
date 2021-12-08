@@ -4,7 +4,9 @@
   color: #FFFFFF !important;
   border: 2px solid transparent;
 }
-
+.nav-link{
+  padding: unset;
+}
 .nav-link:hover{
   border-bottom: 2px solid #FFFFFF;
 }

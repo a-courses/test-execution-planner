@@ -1,10 +1,14 @@
-.font-white-bold{
+.font-white-bold {
   font-size: 15px;
   font-weight: bold;
   color: #FFFFFF !important;
   border: 2px solid transparent;
 }
 
-.nav-link:hover{
+.nav-link {
+  padding: unset;
+}
+
+.nav-link:hover {
   border-bottom: 2px solid #FFFFFF;
 }
